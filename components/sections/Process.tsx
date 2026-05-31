@@ -45,7 +45,7 @@ export default function Process() {
             className="absolute -top-5 right-8 display-font text-[12rem] font-extrabold leading-none text-[rgba(200,240,65,0.05)] pointer-events-none"
             aria-hidden="true"
           >
-            "
+            &quot;
           </div>
           <p className="text-[1.2rem] text-[var(--white)] leading-[1.7] italic font-light max-w-[700px] mb-6">
             {TESTIMONIAL.quote}

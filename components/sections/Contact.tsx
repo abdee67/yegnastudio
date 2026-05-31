@@ -23,7 +23,7 @@ export default function Contact() {
               Ready to build something great?
             </h2>
             <p className="text-[var(--text2)] mb-8 leading-[1.7]">
-              Tell us about your project and we'll get back to you within 24 hours with a free consultation.
+              Tell us about your project and we&apos;ll get back to you within 24 hours with a free consultation.
             </p>
             <div className="flex flex-col gap-3">
               {CONTACT_CHANNELS.map((channel, i) => (

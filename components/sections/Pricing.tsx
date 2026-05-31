@@ -17,7 +17,7 @@ export default function Pricing() {
             Clear prices. No surprises.
           </h2>
           <p className="text-[var(--text2)] text-base max-w-[500px] leading-[1.7] mx-auto">
-            Every package includes a dedicated contact, clear timeline, and unlimited revisions until you're happy.
+            Every package includes a dedicated contact, clear timeline, and unlimited revisions until you&apos;re happy.
           </p>
         </div>
 

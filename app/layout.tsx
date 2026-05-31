@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans } from "next/font/google";
+import { DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({
-  variable: "--font-syne",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
+  display: "swap",
 });
 
 const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-dm-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -43,8 +48,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${syne.variable} ${dmSans.variable} antialiased`}>{children}</body>
+    <html lang="en" className={`${syne.variable} ${dmSans.variable} scroll-smooth`}>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }

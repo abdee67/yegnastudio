@@ -25,7 +25,7 @@ export default function Work() {
               Recent work
             </div>
             <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold text-[var(--white)] leading-[1.1] tracking-[-0.02em] mb-4">
-              Projects we're proud of
+              Projects we&apos;re proud of
             </h2>
           </div>
           <Button as="a" href="#contact" variant="outline">
