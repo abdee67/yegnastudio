@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import { FOOTER_LINKS, SOCIAL_LINKS } from '@/data'
+import { BRAND_NAME } from '@/data/brand'
+import BrandMark from '@/components/ui/BrandMark'
 
 export default function Footer() {
-  const year = 2024
+  const year = new Date().getFullYear()
 
   return (
     <footer className="bg-[var(--black)] border-t border-[var(--border)] pt-14 pb-8 px-6">
@@ -13,9 +15,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="display-font text-xl font-black text-[var(--white)]">
-              Dev<span className="text-[var(--accent)]">Studio</span>
-            </Link>
+            <BrandMark size="lg" />
             <p className="text-[var(--text2)] text-sm leading-relaxed mt-4 mb-6 max-w-[260px]">
               We build fast, beautiful, and scalable digital products for businesses
               in Ethiopia and beyond.
@@ -61,13 +61,9 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-6 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[var(--muted)] text-xs">
-            © {year} DevStudio — Addis Ababa, Ethiopia. All rights reserved.
-          </p>
-          <p className="text-[var(--muted)] text-xs">
-            Built with React · Next.js · Flutter
+            © {year} {BRAND_NAME} — Addis Ababa, Ethiopia. All rights reserved.
           </p>
         </div>
-
       </div>
     </footer>
   )

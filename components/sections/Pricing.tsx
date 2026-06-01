@@ -1,15 +1,18 @@
 'use client'
 
+import { motion, useReducedMotion } from 'framer-motion'
 import { PLANS } from '@/data'
-import { useScrollFade } from '@/hooks/use-scroll-fade'
+import RevealOnScroll from '@/components/ui/RevealOnScroll'
+import StaggerContainer from '@/components/ui/StaggerContainer'
+import StaggerItem from '@/components/ui/StaggerItem'
 
 export default function Pricing() {
-  const ref = useScrollFade()
+  const prefersReduced = useReducedMotion()
 
   return (
-    <section id="pricing" className="bg-[var(--surface)] py-24 px-8" ref={ref}>
+    <section id="pricing" className="bg-[var(--surface)] py-24 px-8">
       <div className="max-w-[1100px] mx-auto">
-        <div className="scroll-fade text-center">
+        <RevealOnScroll className="text-center">
           <div className="text-[var(--accent)] text-xs font-bold tracking-[0.15em] uppercase mb-3">
             Pricing
           </div>
@@ -19,13 +22,15 @@ export default function Pricing() {
           <p className="text-[var(--text2)] text-base max-w-[500px] leading-[1.7] mx-auto">
             Every package includes a dedicated contact, clear timeline, and unlimited revisions until you&apos;re happy.
           </p>
-        </div>
+        </RevealOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[400px] md:max-w-none mx-auto mt-12 scroll-fade">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[400px] md:max-w-none mx-auto mt-12">
           {PLANS.map((plan, i) => (
-            <div
+            <StaggerItem key={plan.name}>
+              <motion.div
               key={i}
-              className={`bg-[var(--surface)] border border-[var(--border)] rounded-[20px] p-8 relative transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(200,240,65,0.3)] ${
+                whileHover={prefersReduced ? undefined : { y: -6 }}
+                className={`bg-[var(--surface)] border border-[var(--border)] rounded-[20px] p-8 relative will-change-transform hover:border-[rgba(200,240,65,0.3)] ${
                 plan.featured ? 'border-[var(--accent)] bg-gradient-to-br from-[rgba(200,240,65,0.06)] to-[var(--surface)]' : ''
               }`}
             >
@@ -66,9 +71,10 @@ export default function Pricing() {
               >
                 {plan.cta}
               </a>
-            </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

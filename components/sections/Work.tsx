@@ -1,11 +1,14 @@
 'use client'
 
+import { motion, useReducedMotion } from 'framer-motion'
 import { PROJECTS } from '@/data'
-import { useScrollFade } from '@/hooks/use-scroll-fade'
 import Button from '@/components/ui/Button'
+import RevealOnScroll from '@/components/ui/RevealOnScroll'
+import StaggerContainer from '@/components/ui/StaggerContainer'
+import StaggerItem from '@/components/ui/StaggerItem'
 
 export default function Work() {
-  const ref = useScrollFade()
+  const prefersReduced = useReducedMotion()
 
   const bgMap: Record<string, string> = {
     t1: 'linear-gradient(135deg,#1a1a2e,#16213e)',
@@ -17,9 +20,9 @@ export default function Work() {
   }
 
   return (
-    <section id="work" className="bg-[var(--surface)] py-24 px-8" ref={ref}>
+    <section id="work" className="bg-[var(--surface)] py-24 px-8">
       <div className="max-w-[1100px] mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 scroll-fade">
+        <RevealOnScroll className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
             <div className="text-[var(--accent)] text-xs font-bold tracking-[0.15em] uppercase mb-3">
               Recent work
@@ -31,40 +34,45 @@ export default function Work() {
           <Button as="a" href="#contact" variant="outline">
             All projects
           </Button>
-        </div>
+        </RevealOnScroll>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {PROJECTS.map((project, i) => (
-            <div
+            <StaggerItem key={project.title}>
+              <motion.div
               key={i}
-              className="rounded-2xl overflow-hidden border border-[var(--border)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(200,240,65,0.3)] cursor-pointer group scroll-fade"
-            >
-              <div
-                style={{ background: bgMap[project.theme] || '#111' }}
-                className="h-[200px] relative flex items-center justify-center text-5xl"
+                whileHover={prefersReduced ? undefined : { y: -6, transition: { duration: 0.2 } }}
+                className="rounded-2xl overflow-hidden border border-[var(--border)] hover:border-[rgba(200,240,65,0.3)] cursor-pointer group will-change-transform"
               >
-                <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md border border-white/10 text-[var(--text2)] text-[0.7rem] px-2.5 py-1 rounded-full font-medium">
-                  {project.type}
+                <div
+                  style={{ background: bgMap[project.theme] || 'var(--surface2)' }}
+                  className="h-[200px] relative flex items-center justify-center text-5xl"
+                >
+                  <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md border border-white/10 text-[var(--text2)] text-[0.7rem] px-2.5 py-1 rounded-full font-medium">
+                    {project.type}
+                  </div>
+                  {project.emoji}
                 </div>
-                {project.emoji}
-              </div>
-              <div className="bg-[var(--surface)] p-5">
-                <h4 className="display-font text-base font-bold text-[var(--white)] mb-1">
-                  {project.title}
-                </h4>
-                <p className="text-[var(--text2)] text-[0.82rem]">
-                  {project.description}
-                </p>
-                <div className="flex items-center justify-between mt-3">
-                  <span className="text-[var(--muted)] text-xs">{project.year}</span>
-                  <span className="text-[var(--accent)] text-sm opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                    ↗
-                  </span>
+                <div className="bg-[var(--surface)] p-5">
+                  <h4 className="display-font text-base font-bold text-[var(--white)] mb-1">
+                    {project.title}
+                  </h4>
+                  <p className="text-[var(--text2)] text-[0.82rem]">
+                    {project.description}
+                  </p>
+                  <div className="flex items-center justify-between mt-3">
+                    <time dateTime={project.year} className="text-[var(--muted)] text-xs">
+                      {project.year}
+                    </time>
+                    <span className="text-[var(--accent)] text-sm opacity-0 group-hover:opacity-100">
+                      ↗
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   )

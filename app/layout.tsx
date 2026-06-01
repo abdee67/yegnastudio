@@ -1,24 +1,32 @@
-import type { Metadata } from "next";
-import { DM_Sans, Syne } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Noto_Sans_Ethiopic, Space_Grotesk } from "next/font/google";
+import { BRAND_DOMAIN, BRAND_NAME } from "@/data/brand";
 import "./globals.css";
 
-const syne = Syne({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-syne",
+  variable: "--font-space-grotesk",
+  weight: ["500", "600", "700"],
+  display: "swap",
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-dm-sans",
+const notoSansEthiopic = Noto_Sans_Ethiopic({
+  subsets: ["ethiopic", "latin"],
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-noto-sans-ethiopic",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: 'DevStudio | Web & Mobile Development Agency | Addis Ababa',
+  metadataBase: new URL(BRAND_DOMAIN),
+  title: `${BRAND_NAME} | Web & Mobile Development Agency | Addis Ababa`,
   description:
     'We build fast, beautiful, and scalable web and mobile apps using React, Next.js, Vite, and Flutter. Based in Addis Ababa, serving clients globally.',
   keywords: [
@@ -29,27 +37,55 @@ export const metadata: Metadata = {
     'graphic design Addis Ababa',
     'social media management Ethiopia',
   ],
+  authors: [{ name: BRAND_NAME, url: BRAND_DOMAIN }],
+  manifest: '/manifest.json',
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
   openGraph: {
-    title: 'DevStudio — Web & Mobile Development Agency',
+    title: `${BRAND_NAME} — Web & Mobile Development Agency`,
     description: 'React, Next.js, Flutter & more — we turn your ideas into fast, beautiful, conversion-ready apps.',
     type: 'website',
     locale: 'en_ET',
+    siteName: BRAND_NAME,
+    url: BRAND_DOMAIN,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DevStudio — Web & Mobile Development Agency',
+    title: `${BRAND_NAME} — Web & Mobile Development Agency`,
     description: 'React, Next.js, Flutter & more — built in Addis Ababa, for the world.',
   },
 }
- 
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: '#0a0a0a',
+  colorScheme: 'dark',
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${syne.variable} ${dmSans.variable} scroll-smooth`}>
-      <body className="antialiased">{children}</body>
+    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${notoSansEthiopic.variable} scroll-smooth`}>
+      <body className="antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-[var(--accent)] focus:px-4 focus:py-2 focus:text-[var(--black)]"
+        >
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   )
 }

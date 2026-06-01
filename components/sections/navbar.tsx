@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { NAV_LINKS } from '@/data'
 import Button from '@/components/ui/Button'
+import BrandMark from '@/components/ui/BrandMark'
 
 export default function Navbar() {
-  const [scrolled,     setScrolled]     = useState(false)
-  const [mobileOpen,   setMobileOpen]   = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -32,9 +33,7 @@ export default function Navbar() {
         aria-label="Main navigation"
       >
         {/* Logo */}
-        <Link href="/" className="display-font text-xl font-black tracking-tight text-[var(--white)]">
-          Dev<span className="text-[var(--accent)]">Studio</span>
-        </Link>
+        <BrandMark size="md" />
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8 list-none">
@@ -111,9 +110,7 @@ export default function Navbar() {
             mobileOpen ? 'translate-x-0' : 'translate-x-full',
           ].join(' ')}
         >
-          <div className="mb-6 display-font text-lg font-black text-[var(--white)]">
-            Dev<span className="text-[var(--accent)]">Studio</span>
-          </div>
+          <BrandMark size="sm" />
 
           {NAV_LINKS.map((link) => (
             <Link

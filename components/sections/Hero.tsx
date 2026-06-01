@@ -1,8 +1,13 @@
+'use client'
+
+import { motion, useReducedMotion } from 'framer-motion'
 import Button from '@/components/ui/Button'
 import Badge from '@/components/ui/Badge'
 import { HERO_STATS } from '@/data'
 
 export default function Hero() {
+  const prefersReduced = useReducedMotion()
+
   return (
     <section
       id="home"
@@ -18,7 +23,12 @@ export default function Hero() {
           <div>
             {/* Availability badge */}
             <div className="inline-flex items-center gap-2 bg-[rgba(200,240,65,0.1)] border border-[rgba(200,240,65,0.25)] text-[var(--accent)] px-4 py-1.5 rounded-full text-xs font-bold mb-7 display-font">
-              <span className="pulse-dot" aria-hidden="true" />
+              <motion.span
+                animate={prefersReduced ? undefined : { opacity: [1, 0.25, 1] }}
+                transition={{ duration: prefersReduced ? 0 : 2, repeat: Infinity, ease: 'easeInOut' }}
+                className="h-[7px] w-[7px] rounded-full bg-[var(--accent)]"
+                aria-hidden="true"
+              />
               Available for projects
             </div>
 

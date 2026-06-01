@@ -11,8 +11,9 @@
   --color-text: #e8e8e2;
   --color-text2: #aaaaaa;
 
-  --font-display: var(--font-syne), sans-serif;
-  --font-body: var(--font-dm-sans), sans-serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-brand-ethiopic: var(--font-noto-sans-ethiopic), sans-serif;
 
   --radius-sm: 8px;
   --radius-md: 12px;
@@ -32,6 +33,9 @@
   --border: #2a2a2a;
   --text: #e8e8e2;
   --text2: #aaaaaa;
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-brand-ethiopic: var(--font-noto-sans-ethiopic), sans-serif;
 }
 
 @layer base {
@@ -43,15 +47,20 @@
 
   html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   body {
     background: var(--black);
     color: var(--text);
-    font-family: var(--font-body);
+    font-family: var(--font-inter), sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -61,11 +70,12 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-display);
-    font-weight: 800;
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-weight: 700;
     line-height: 1.1;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     color: var(--white);
+    overflow-wrap: break-word;
   }
 
   a {
@@ -120,34 +130,11 @@
 
 @layer components {
   .display-font {
-    font-family: var(--font-display);
+    font-family: var(--font-space-grotesk), sans-serif;
   }
 
-  .scroll-fade {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
-  }
-
-  .scroll-fade.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .ticker-scroll {
-    display: flex;
-    gap: 2rem;
-    animation: ticker 22s linear infinite;
-    white-space: nowrap;
-    will-change: transform;
-  }
-
-  .pulse-dot {
-    width: 7px;
-    height: 7px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: pulse-dot 2s ease-in-out infinite;
+  .brand-ethiopic {
+    font-family: var(--font-noto-sans-ethiopic), sans-serif;
   }
 
   .hero-glow {
@@ -158,27 +145,5 @@
     height: 700px;
     background: radial-gradient(circle, rgba(200, 240, 65, 0.07) 0%, transparent 70%);
     pointer-events: none;
-  }
-}
-
-@keyframes ticker {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes pulse-dot {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.25;
   }
 }

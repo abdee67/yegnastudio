@@ -1,21 +1,19 @@
 'use client'
 
 import { CONTACT_CHANNELS, SERVICE_OPTIONS } from '@/data'
-import { useScrollFade } from '@/hooks/use-scroll-fade'
+import RevealOnScroll from '@/components/ui/RevealOnScroll'
 
 export default function Contact() {
-  const ref = useScrollFade()
-
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault()
     alert("Thanks! We'll get back to you within 24 hours.")
   }
 
   return (
-    <section id="contact" className="bg-[var(--surface)] py-24 px-8" ref={ref}>
+    <section id="contact" className="bg-[var(--surface)] py-24 px-8">
       <div className="max-w-[1100px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="scroll-fade">
+          <RevealOnScroll>
             <div className="text-[var(--accent)] text-xs font-bold tracking-[0.15em] uppercase mb-3">
               Get in touch
             </div>
@@ -35,9 +33,9 @@ export default function Contact() {
                 </div>
               ))}
             </div>
-          </div>
+          </RevealOnScroll>
 
-          <div className="flex flex-col gap-4 scroll-fade">
+          <RevealOnScroll delay={0.12} direction="right" className="flex flex-col gap-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label className="text-[0.8rem] font-semibold text-[var(--text2)] tracking-[0.05em] uppercase">
@@ -93,7 +91,7 @@ export default function Contact() {
             >
               Send message →
             </button>
-          </div>
+          </RevealOnScroll>
         </div>
       </div>
     </section>

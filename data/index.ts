@@ -1,11 +1,27 @@
 // ─── Navigation ──────────────────────────────────────────────────────────────
 
 export const NAV_LINKS = [
-  { label: 'Services', href: '#services' },
-  { label: 'Work',     href: '#work' },
-  { label: 'Process',  href: '#process' },
-  { label: 'Pricing',  href: '#pricing' },
-  { label: 'Contact',  href: '#contact' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Work', href: '/#work' },
+  { label: 'Process', href: '/#process' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Contact', href: '/#contact' },
+]
+
+export const SERVICES_NAV = [
+  { label: 'Web Development', href: '/services/web-development', icon: '🌐', desc: 'React, Next.js & Vite apps' },
+  { label: 'Mobile Apps', href: '/services/mobile-apps', icon: '📱', desc: 'Flutter iOS & Android' },
+  { label: 'Graphic Design', href: '/services/graphic-design', icon: '🎨', desc: 'Logos, brand & print' },
+  { label: 'UI/UX Design', href: '/services/ui-ux-design', icon: '🖥️', desc: 'Figma wireframes & systems' },
+  { label: 'Social Media', href: '/services/social-media', icon: '📣', desc: 'Strategy & content creation' },
+]
+
+export const PRICING_NAV = [
+  { label: 'Web Development', href: '/pricing/web-development', icon: '🌐', desc: 'Starting ETB 15,000' },
+  { label: 'Mobile Apps', href: '/pricing/mobile-apps', icon: '📱', desc: 'Starting ETB 25,000' },
+  { label: 'Graphic Design', href: '/pricing/graphic-design', icon: '🎨', desc: 'Starting ETB 5,000' },
+  { label: 'UI/UX Design', href: '/pricing/ui-ux-design', icon: '🖥️', desc: 'Starting ETB 8,000' },
+  { label: 'Social Media', href: '/pricing/social-media', icon: '📣', desc: 'Starting ETB 3,000/mo' },
 ]
 
 // ─── Hero ─────────────────────────────────────────────────────────────────────
@@ -18,7 +34,7 @@ export const HERO_STATS = [
     wide: true,
   },
   { num: '20+', label: 'Happy clients served' },
-  { num: '2+',  label: 'Years in business' },
+  { num: '2+', label: 'Years in business' },
 ]
 
 // ─── Ticker ───────────────────────────────────────────────────────────────────
@@ -244,9 +260,10 @@ export const PLANS = [
 // ─── Contact ──────────────────────────────────────────────────────────────────
 
 export const CONTACT_CHANNELS = [
-  { icon: '📞', label: '+251 9XX XXX XXX' },
-  { icon: '✉️', label: 'hello@devstudio.et' },
-  { icon: '💬', label: '@devstudio on Telegram' },
+  { icon: '📞', label: '+251 977 764 845' },
+  { icon: '📞', label: '+251 901 889 188' },
+  { icon: '✉️', label: 'hello@yegnastudio.et' },
+  { icon: '💬', label: '@yegnastudio on Telegram' },
   { icon: '📍', label: 'Addis Ababa, Ethiopia' },
 ]
 
@@ -263,27 +280,29 @@ export const SERVICE_OPTIONS = [
 
 export const FOOTER_LINKS = {
   Services: [
-    { label: 'Web Development',       href: '#services' },
-    { label: 'Mobile Apps',           href: '#services' },
-    { label: 'Graphic Design',        href: '#services' },
-    { label: 'Social Media',          href: '#services' },
+    { label: 'Web Development', href: '/services/web-development' },
+    { label: 'Mobile Apps', href: '/services/mobile-apps' },
+    { label: 'Graphic Design', href: '/services/graphic-design' },
+    { label: 'Social Media', href: '/services/social-media' },
   ],
   Company: [
-    { label: 'About us',  href: '#' },
-    { label: 'Portfolio', href: '#work' },
-    { label: 'Pricing',   href: '#pricing' },
-    { label: 'Contact',   href: '#contact' },
+    { label: 'About us', href: '#' },
+    { label: 'Portfolio', href: '/#work' },
+    { label: 'Pricing', href: '/pricing/web-development' },
+    { label: 'Contact', href: '/#contact' },
   ],
   Contact: [
-    { label: '+251 9XX XXX XXX', href: 'tel:+251900000000' },
-    { label: 'hello@devstudio.et', href: 'mailto:hello@devstudio.et' },
-    { label: 'Addis Ababa, ET',  href: '#' },
+    { label: '+251 977 764 845', href: 'tel:+251977764845' },
+    { label: '+251 901 889 188', href: 'tel:+251901889188' },
+    { label: 'hello@yegnastudio.et', href: 'mailto:hello@yegnastudio.et' },
+    { label: '@yegnastudio on Telegram', href: 'tgram:@yegnastudio' },
+    { label: 'Addis Ababa, Ethiopia', href: '#' },
   ],
 }
 
 export const SOCIAL_LINKS = [
-  { label: 'Facebook',  href: '#', short: 'fb' },
-  { label: 'LinkedIn',  href: '#', short: 'in' },
+  { label: 'Facebook', href: '#', short: 'fb' },
+  { label: 'LinkedIn', href: '#', short: 'in' },
   { label: 'Instagram', href: '#', short: 'ig' },
-  { label: 'Telegram',  href: '#', short: 'tg' },
+  { label: 'Telegram', href: '#', short: 'tg' },
 ]
