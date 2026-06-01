@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yegnastudio.et/sitemap.xml
