@@ -1,0 +1,212 @@
+import type { ServicePageData } from '@/types/service'
+
+export const mobileAppsService: ServicePageData = {
+  slug: 'mobile-apps',
+  name: 'Mobile Apps',
+  meta: {
+    title: 'Mobile App Development Addis Ababa | የኛstudio',
+    description: 'Flutter mobile app development in Addis Ababa for iOS and Android apps with Firebase, REST APIs and native device features.',
+    keywords: [
+      'mobile app development Addis Ababa',
+      'Flutter developer Ethiopia',
+      'iOS app development Ethiopia',
+      'Android app development Ethiopia',
+      'Firebase app developer',
+      'Dart developer',
+      'REST API mobile app',
+      'startup app Ethiopia',
+      'cross platform app',
+    ],
+    ogTitle: 'Flutter Mobile Apps Built in Addis Ababa',
+    ogDescription: 'Design and launch cross-platform iOS and Android apps with Flutter, Firebase and API integrations.',
+  },
+  hero: {
+    badge: 'Mobile Apps',
+    headline: 'Mobile apps\npeople keep',
+    accentPhrase: 'people keep',
+    subheadline:
+      'We design and build Flutter apps that feel smooth, work across iOS and Android, and connect cleanly to your business systems.',
+    primaryCTA: { label: 'Start an app project', href: '/#contact' },
+    secondaryCTA: { label: 'View pricing', href: '/pricing/mobile-apps' },
+    stats: [
+      { num: '2x', label: 'platform coverage from one codebase' },
+      { num: '25+', label: 'core app screens planned and built' },
+      { num: '30d', label: 'typical MVP build window' },
+    ],
+  },
+  overview: {
+    eyebrow: 'What you get',
+    title: 'A focused mobile app build that respects users and timelines.',
+    description: [
+      'Mobile products need more than screens. They need clear onboarding, reliable data flows, fast feedback, and an interface that feels natural on the device in someone’s hand.',
+      'We use Flutter and Dart to ship one high-quality codebase across iOS and Android, backed by Firebase, REST APIs, notifications, maps, and native device features when needed.',
+      'From MVPs to operational apps, we help you choose the smallest useful version, launch it properly, and leave room for the next release.',
+    ],
+    highlights: [
+      { icon: '📱', title: 'Native-feeling UI', description: 'Smooth layouts, readable screens, and platform-aware interaction patterns.' },
+      { icon: '🔔', title: 'Useful integrations', description: 'Push notifications, maps, media, auth, storage, and API-backed workflows.' },
+      { icon: '🧪', title: 'MVP discipline', description: 'We help trim the first release to what users need most.' },
+      { icon: '🚀', title: 'Release support', description: 'Build preparation, testing guidance, and store-ready handoff.' },
+    ],
+  },
+  howWeDiffer: {
+    eyebrow: 'Why የኛstudio',
+    title: 'We build app flows around real behavior, not feature wishlists.',
+    subtitle: 'The first version should prove value quickly while staying stable enough to keep users engaged.',
+    differentiators: [
+      { num: '01', title: 'Product shaping', description: 'We turn broad ideas into prioritized flows, roles, and release-ready milestones.' },
+      { num: '02', title: 'Cross-platform care', description: 'Flutter lets us move quickly while preserving performance and interface consistency.' },
+      { num: '03', title: 'Backend clarity', description: 'We define data models, auth, permissions, and API boundaries before screens pile up.' },
+      { num: '04', title: 'Testing mindset', description: 'Core flows are reviewed on real device sizes, with edge cases documented for launch.' },
+    ],
+  },
+  process: {
+    eyebrow: 'How it works',
+    title: 'From app idea to a testable release.',
+    steps: [
+      { num: '01', title: 'Product map', description: 'We define users, roles, core jobs, and the first release boundary.', deliverable: 'MVP scope' },
+      { num: '02', title: 'Flow design', description: 'We design onboarding, key screens, empty states, and navigation.', deliverable: 'Clickable prototype' },
+      { num: '03', title: 'Backend setup', description: 'We prepare auth, database, storage, API contracts, and notifications.', deliverable: 'Data model' },
+      { num: '04', title: 'Flutter build', description: 'We implement screens, state, integrations, and device-specific features.', deliverable: 'Test build' },
+      { num: '05', title: 'QA and handoff', description: 'We test core flows, package builds, and prepare launch guidance.', deliverable: 'Release package' },
+    ],
+  },
+  techStack: {
+    eyebrow: 'Tools we use',
+    title: 'Mobile tooling for fast releases and dependable apps.',
+    tools: [
+      { name: 'Flutter', category: 'App Framework', description: 'Cross-platform apps for iOS and Android from one codebase.', proficiency: 'Expert' },
+      { name: 'Dart', category: 'Engineering', description: 'Typed app logic, state models, and maintainable feature modules.', proficiency: 'Expert' },
+      { name: 'Firebase', category: 'Backend', description: 'Authentication, Firestore, Storage, Analytics, and Cloud Messaging.', proficiency: 'Advanced' },
+      { name: 'REST APIs', category: 'Integration', description: 'Clean connections to existing business systems and services.', proficiency: 'Advanced' },
+      { name: 'Google Maps', category: 'Device Features', description: 'Location-aware flows for delivery, booking, routing, and service areas.', proficiency: 'Proficient' },
+      { name: 'Push Notifications', category: 'Device Features', description: 'Transactional alerts and engagement messages with careful timing.', proficiency: 'Advanced' },
+      { name: 'Figma', category: 'Design', description: 'Prototype reviews, screen specs, and handoff-ready UI systems.', proficiency: 'Advanced' },
+      { name: 'App Store Prep', category: 'Release', description: 'Build assets, testing notes, and release checklist support.', proficiency: 'Proficient' },
+    ],
+  },
+  projects: [
+    {
+      emoji: '🚗',
+      type: 'Transport',
+      title: 'Ride booking MVP',
+      description: 'A Flutter prototype with rider onboarding, trip requests, driver assignment, and status updates.',
+      year: '2024',
+      tags: ['Flutter', 'Maps', 'Firebase'],
+      href: '/#work',
+      gradientFrom: 'var(--surface2)',
+      gradientTo: 'color-mix(in srgb, var(--accent) 14%, var(--black))',
+    },
+    {
+      emoji: '🍽️',
+      type: 'Ordering',
+      title: 'Restaurant ordering app',
+      description: 'Menu browsing, cart flows, order status, and staff notifications for a local food brand.',
+      year: '2024',
+      tags: ['Dart', 'REST API', 'Orders'],
+      href: '/#work',
+      gradientFrom: 'var(--black)',
+      gradientTo: 'var(--surface2)',
+    },
+    {
+      emoji: '🎓',
+      type: 'Education',
+      title: 'Learning companion app',
+      description: 'Course lists, lesson tracking, saved resources, and notification reminders for student cohorts.',
+      year: '2023',
+      tags: ['Flutter', 'Auth', 'Storage'],
+      href: '/#work',
+      gradientFrom: 'var(--surface)',
+      gradientTo: 'color-mix(in srgb, var(--accent) 10%, var(--surface2))',
+    },
+  ],
+  pricing: {
+    eyebrow: 'Packages',
+    title: 'Mobile app packages for MVPs and growing products.',
+    subtitle: 'Start with a focused release, then expand once real users tell us what matters.',
+    pricingPageHref: '/pricing/mobile-apps',
+    note: 'Store fees, third-party service costs, and advanced backend infrastructure are scoped separately.',
+    plans: [
+      {
+        name: 'MVP',
+        price: 'ETB 25,000',
+        period: 'one-time',
+        description: 'A lean Flutter app for validating one core workflow.',
+        features: ['Up to 8 screens', 'Flutter iOS and Android', 'Firebase auth', 'Basic data storage', 'Test build handoff'],
+        cta: 'Build my MVP',
+        variant: 'outline',
+        deliveryTime: '3-4 weeks',
+        revisions: '3 rounds',
+        support: '14 days',
+      },
+      {
+        name: 'Growth App',
+        price: 'ETB 60,000',
+        period: 'one-time',
+        description: 'A fuller app with richer flows, integrations, and launch readiness.',
+        features: ['Up to 18 screens', 'API integrations', 'Push notifications', 'Role-based flows', 'Release checklist'],
+        cta: 'Plan my app',
+        variant: 'solid',
+        featured: true,
+        deliveryTime: '6-8 weeks',
+        revisions: 'Milestone based',
+        support: '30 days',
+      },
+      {
+        name: 'Platform',
+        price: 'Custom',
+        period: 'project',
+        description: 'Complex apps with multiple roles, dashboards, payments, and ongoing releases.',
+        features: ['Product roadmap', 'Custom backend', 'Admin tools', 'Payment flows', 'Maintenance retainer'],
+        cta: "Let's scope it",
+        variant: 'outline',
+        deliveryTime: 'Scoped timeline',
+        revisions: 'Milestone based',
+        support: 'SLA available',
+      },
+    ],
+  },
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Mobile app questions before we start.',
+    faqs: [
+      {
+        question: 'Will one Flutter app work on both iOS and Android?',
+        answer:
+          'Yes. Flutter lets us build one shared codebase for both platforms while still respecting screen sizes, gestures, and platform expectations.',
+      },
+      {
+        question: 'Can you publish the app to the stores?',
+        answer:
+          'We can prepare the build assets, testing notes, and submission checklist. Store account ownership stays with you, and we can guide the submission process.',
+      },
+      {
+        question: 'Do I need a backend before starting?',
+        answer:
+          'Not necessarily. We can use Firebase for many MVPs, connect to an existing REST API, or plan a custom backend when the app requires more control.',
+      },
+      {
+        question: 'How do we decide the MVP scope?',
+        answer:
+          'We identify the user role, the job they need to complete, and the smallest flow that proves value. Nice-to-have features move into later releases.',
+      },
+      {
+        question: 'Can the app use phone features?',
+        answer:
+          'Yes. We can integrate camera, location, notifications, file upload, maps, contacts, and other native features when they support the product goal.',
+      },
+      {
+        question: 'What happens after launch?',
+        answer:
+          'We can provide bug fixes, analytics review, feature updates, and monthly maintenance. For active products, we recommend planning a second release after user feedback.',
+      },
+    ],
+  },
+  cta: {
+    headline: 'Have an app idea worth testing?',
+    subtext: 'We will help you shape it into a focused first release users can actually try.',
+    primaryCTA: { label: 'Start an app project', href: '/#contact' },
+    secondaryCTA: { label: 'See app pricing', href: '/pricing/mobile-apps' },
+    note: 'Free discovery call before scope is finalized.',
+  },
+}
