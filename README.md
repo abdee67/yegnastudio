@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# የኛstudio
+
+Professional agency portfolio site for web apps, mobile apps, business profiles, UI/UX, and social media work.
+
+## Stack
+
+- Next.js 16.2.6 App Router
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local` and add the Telegram bot credentials used by the contact form:
 
-## Learn More
+```bash
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=
+```
 
-To learn more about Next.js, take a look at the following resources:
+These variables must also be configured in the production host, such as Vercel project environment variables.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev
+npm run lint
+npm run build
+npm run start
+```
 
-## Deploy on Vercel
+## Deployment Checklist
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Set `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in production.
+- Run `npm run lint`.
+- Run `npm run build`.
+- Confirm the contact form sends a test message through `/api/send_telegram`.
