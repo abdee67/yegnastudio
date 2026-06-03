@@ -8,7 +8,7 @@ export default function PageFade({ children }: { children: React.ReactNode }) {
   return (
     <motion.main
       id="main-content"
-      initial={{ opacity: prefersReduced ? 1 : 0 }}
+      initial={false}
       animate={{ opacity: 1 }}
       transition={{ duration: prefersReduced ? 0 : 0.4 }}
     >

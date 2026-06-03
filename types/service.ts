@@ -62,6 +62,8 @@ export interface ServiceProject {
   year: string
   tags: string[]
   href: string
+  image?: string
+  imageAlt?: string
   gradientFrom: string
   gradientTo: string
 }

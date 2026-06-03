@@ -9,7 +9,7 @@ const segmentLabels: Record<string, string> = {
   pricing: 'Pricing',
   'web-development': 'Web Development',
   'mobile-apps': 'Mobile Apps',
-  'graphic-design': 'Graphic Design',
+  'business-profile': 'Business Profile',
   'ui-ux-design': 'UI/UX Design',
   'social-media': 'Social Media',
 }

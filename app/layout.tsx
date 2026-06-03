@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     'React developer Addis Ababa',
     'Flutter mobile app Ethiopia',
     'Next.js agency Ethiopia',
-    'graphic design Addis Ababa',
+    'business profile Addis Ababa',
     'social media management Ethiopia',
   ],
   authors: [{ name: BRAND_NAME, url: BRAND_DOMAIN }],

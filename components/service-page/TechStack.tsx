@@ -19,7 +19,7 @@ export default function TechStack({ eyebrow, title, tools }: ServiceTechStackDat
           <h2 className="mt-3 text-[clamp(1.6rem,4vw,2.8rem)]">{title}</h2>
         </RevealOnScroll>
 
-        <div className="mt-8 flex gap-2 overflow-x-auto pb-2" role="tablist" aria-label="Technology categories">
+        <div className="mt-8 flex w-full min-w-0 max-w-full gap-2 overflow-x-auto pb-2" role="tablist" aria-label="Technology categories">
           {categories.map((category) => {
             const isActive = category === activeCategory
 
@@ -50,16 +50,16 @@ export default function TechStack({ eyebrow, title, tools }: ServiceTechStackDat
             animate={{ opacity: 1, y: 0 }}
             exit={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: -16 }}
             transition={{ duration: prefersReduced ? 0 : 0.25 }}
-            className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4"
+            className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
           >
             {visibleTools.map((tool) => (
               <article key={`${tool.name}-${tool.category}`} className="rounded-xl border border-[var(--border)] bg-[var(--surface2)] p-4">
-                <div className="flex min-h-[28px] items-start justify-between gap-3">
-                  <h3 className="text-base">{tool.name}</h3>
+                <div className="flex min-h-[28px] min-w-0 items-start justify-between gap-3">
+                  <h3 className="min-w-0 text-base break-words">{tool.name}</h3>
                   {tool.proficiency && tool.proficiency !== 'Proficient' && (
                     <span
                       className={[
-                        'rounded-full px-2 py-1 text-[0.68rem] font-bold',
+                        'shrink-0 rounded-full px-2 py-1 text-[0.68rem] font-bold',
                         tool.proficiency === 'Expert'
                           ? 'bg-[var(--accent)] text-[var(--black)]'
                           : 'border border-[var(--border)] text-[var(--text2)]',

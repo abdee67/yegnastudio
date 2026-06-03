@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useReducedMotion } from 'framer-motion'
 import Badge from '@/components/ui/Badge'
@@ -40,17 +41,37 @@ export default function ServiceProjects({ eyebrow, title, projects }: ServicePro
             <StaggerItem key={project.title}>
               <motion.article
                 whileHover={prefersReduced ? undefined : { y: -6, transition: { duration: 0.2 } }}
-                className="group overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] will-change-transform"
+                className="group overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] hover:border-[rgba(200,240,65,0.35)] will-change-transform"
               >
-                <Link href={project.href} className="block min-h-[44px]">
+                <Link
+                  href={project.href}
+                  target={project.href.startsWith('http') ? '_blank' : undefined}
+                  rel={project.href.startsWith('http') ? 'noreferrer' : undefined}
+                  className="block min-h-[44px]"
+                  aria-label={`View ${project.title}`}
+                >
                   <div
-                    className="relative flex h-[210px] items-center justify-center text-5xl"
+                    className="relative flex aspect-[16/10] items-center justify-center overflow-hidden text-5xl"
                     style={{ background: `linear-gradient(135deg, ${project.gradientFrom}, ${project.gradientTo})` }}
                   >
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.imageAlt || `${project.title} website screenshot`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover object-top transition duration-500 group-hover:scale-[1.04]"
+                      />
+                    ) : (
+                      <span aria-hidden="true">{project.emoji}</span>
+                    )}
+                    <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/20" />
                     <span className="absolute left-3 top-3 rounded-full border border-white/10 bg-black/50 px-3 py-1 text-xs font-semibold text-[var(--text2)] backdrop-blur">
                       {project.type}
                     </span>
-                    <span aria-hidden="true">{project.emoji}</span>
+                    <span className="absolute bottom-3 right-3 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/50 text-lg text-[var(--accent)] opacity-0 backdrop-blur-md transition group-hover:opacity-100">
+                      ↗
+                    </span>
                   </div>
                   <div className="p-5">
                     <h3 className="text-lg">{project.title}</h3>

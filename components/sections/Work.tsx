@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion, useReducedMotion } from 'framer-motion'
 import { PROJECTS } from '@/data'
 import Button from '@/components/ui/Button'
@@ -36,40 +37,64 @@ export default function Work() {
           </Button>
         </RevealOnScroll>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {PROJECTS.map((project, i) => (
+        <StaggerContainer className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {PROJECTS.map((project) => (
             <StaggerItem key={project.title}>
-              <motion.div
-              key={i}
+              <motion.a
+                href={project.href}
+                target="_blank"
+                rel="noreferrer"
                 whileHover={prefersReduced ? undefined : { y: -6, transition: { duration: 0.2 } }}
-                className="rounded-2xl overflow-hidden border border-[var(--border)] hover:border-[rgba(200,240,65,0.3)] cursor-pointer group will-change-transform"
+                className="group block overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] hover:border-[rgba(200,240,65,0.35)] will-change-transform"
+                aria-label={`View ${project.title} live site`}
               >
                 <div
                   style={{ background: bgMap[project.theme] || 'var(--surface2)' }}
-                  className="h-[200px] relative flex items-center justify-center text-5xl"
+                  className="relative flex aspect-[16/10] items-center justify-center overflow-hidden text-5xl"
                 >
-                  <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md border border-white/10 text-[var(--text2)] text-[0.7rem] px-2.5 py-1 rounded-full font-medium">
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt || `${project.title} website screenshot`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover object-top transition duration-500 group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    <span aria-hidden="true">{project.emoji}</span>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/20" />
+                  <div className="absolute left-3 top-3 rounded-full border border-white/10 bg-black/60 px-2.5 py-1 text-[0.7rem] font-medium text-[var(--text2)] backdrop-blur-md">
                     {project.type}
                   </div>
-                  {project.emoji}
+                  <span className="absolute bottom-3 right-3 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/50 text-lg text-[var(--accent)] opacity-0 backdrop-blur-md transition group-hover:opacity-100">
+                    ↗
+                  </span>
                 </div>
                 <div className="bg-[var(--surface)] p-5">
                   <h4 className="display-font text-base font-bold text-[var(--white)] mb-1">
                     {project.title}
                   </h4>
-                  <p className="text-[var(--text2)] text-[0.82rem]">
+                  <p className="min-h-[3.4rem] text-[var(--text2)] text-[0.82rem] leading-6">
                     {project.description}
                   </p>
-                  <div className="flex items-center justify-between mt-3">
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="rounded-full border border-[var(--border)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-between mt-4">
                     <time dateTime={project.year} className="text-[var(--muted)] text-xs">
                       {project.year}
                     </time>
-                    <span className="text-[var(--accent)] text-sm opacity-0 group-hover:opacity-100">
-                      ↗
+                    <span className="text-[var(--accent)] text-sm font-semibold opacity-80 group-hover:opacity-100">
+                      Live site
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             </StaggerItem>
           ))}
         </StaggerContainer>

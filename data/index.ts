@@ -11,15 +11,15 @@ export const NAV_LINKS = [
 export const SERVICES_NAV = [
   { label: 'Web Development', href: '/services/web-development', icon: '🌐', desc: 'React, Next.js & Vite apps' },
   { label: 'Mobile Apps', href: '/services/mobile-apps', icon: '📱', desc: 'Flutter iOS & Android' },
-  { label: 'Graphic Design', href: '/services/graphic-design', icon: '🎨', desc: 'Logos, brand & print' },
+  { label: 'Business Profile', href: '/services/business-profile', icon: '🧾', desc: 'Company profiles & PDFs' },
   { label: 'UI/UX Design', href: '/services/ui-ux-design', icon: '🖥️', desc: 'Figma wireframes & systems' },
   { label: 'Social Media', href: '/services/social-media', icon: '📣', desc: 'Strategy & content creation' },
 ]
 
 export const PRICING_NAV = [
-  { label: 'Web Development', href: '/pricing/web-development', icon: '🌐', desc: 'Starting ETB 15,000' },
+  { label: 'Web Development', href: '/pricing/web-development', icon: '🌐', desc: 'Starting ETB 20,000' },
   { label: 'Mobile Apps', href: '/pricing/mobile-apps', icon: '📱', desc: 'Starting ETB 25,000' },
-  { label: 'Graphic Design', href: '/pricing/graphic-design', icon: '🎨', desc: 'Starting ETB 5,000' },
+  { label: 'Business Profile', href: '/pricing/business-profile', icon: '🧾', desc: 'Starting ETB 3,600' },
   { label: 'UI/UX Design', href: '/pricing/ui-ux-design', icon: '🖥️', desc: 'Starting ETB 8,000' },
   { label: 'Social Media', href: '/pricing/social-media', icon: '📣', desc: 'Starting ETB 3,000/mo' },
 ]
@@ -41,7 +41,7 @@ export const HERO_STATS = [
 
 export const TICKER_ITEMS = [
   'React', 'Next.js', 'Flutter', 'Vite',
-  'Web Apps', 'Mobile Apps', 'Graphic Design',
+  'Web Apps', 'Mobile Apps', 'Business Profiles',
   'Social Media', 'UI/UX', 'Addis Ababa',
 ]
 
@@ -66,11 +66,11 @@ export const SERVICES = [
   },
   {
     num: '03',
-    emoji: '🎨',
-    title: 'Graphic Design',
+    emoji: '🧾',
+    title: 'Business Profile',
     description:
-      'Logos, brand identities, marketing materials, and visual assets that make your brand unforgettable.',
-    tags: ['Branding', 'Print', 'Digital'],
+      'Professional company profiles, capability statements, and proposal-ready PDFs starting from ETB 3,600.',
+    tags: ['Company Profile', 'PDF', 'Proposal'],
   },
   {
     num: '04',
@@ -103,63 +103,42 @@ export const SERVICES = [
 export const PROJECTS = [
   {
     id: 1,
-    emoji: '🛒',
-    type: 'Web App',
+    emoji: '🥗',
+    type: 'Nutrition & Health',
     theme: 't1',
-    title: 'E-Commerce Platform',
-    description: 'Full-stack Next.js store with payments, inventory & admin panel',
-    year: '2024',
-    href: '#',
+    title: 'CORD Consultancy',
+    description: 'A polished consultancy website for nutrition, health programs, and field-based community work.',
+    year: '2026',
+    href: 'https://www.cordconsultancy.com/',
+    image: '/images/converted/cord1.webp',
+    imageAlt: 'CORD Consultancy website homepage screenshot',
+    tags: ['Consultancy', 'Responsive Site', 'Health'],
   },
   {
     id: 2,
-    emoji: '🚗',
-    type: 'Mobile App',
+    emoji: '🎬',
+    type: 'Branding Company',
     theme: 't2',
-    title: 'Ride Booking App',
-    description: 'Flutter app with real-time tracking, driver & rider flows',
-    year: '2024',
-    href: '#',
+    title: 'Mika Creation',
+    description: 'A cinematic branding company website with bold visual direction and portfolio-first storytelling.',
+    year: '2026',
+    href: 'https://mika-creation.vercel.app/',
+    image: '/images/converted/mika1.webp',
+    imageAlt: 'Mika Creation website homepage screenshot',
+    tags: ['Branding', 'Portfolio', 'Vercel'],
   },
   {
     id: 3,
-    emoji: '☕',
-    type: 'Branding',
+    emoji: '🧠',
+    type: 'Personal Development',
     theme: 't3',
-    title: 'Coffee Brand Identity',
-    description: 'Full logo system, packaging & social media kit for a local café',
-    year: '2024',
-    href: '#',
-  },
-  {
-    id: 4,
-    emoji: '📊',
-    type: 'Dashboard',
-    theme: 't4',
-    title: 'Analytics Dashboard',
-    description: 'React + Recharts admin dashboard for a fintech startup',
-    year: '2023',
-    href: '#',
-  },
-  {
-    id: 5,
-    emoji: '🏥',
-    type: 'Web App',
-    theme: 't5',
-    title: 'Clinic Booking System',
-    description: 'Appointment scheduling, patient records & SMS notifications',
-    year: '2023',
-    href: '#',
-  },
-  {
-    id: 6,
-    emoji: '🧴',
-    type: 'Social Media',
-    theme: 't6',
-    title: 'Skincare Brand Campaign',
-    description: '3-month social media management & content strategy',
-    year: '2023',
-    href: '#',
+    title: 'Great Minds Growth',
+    description: 'A personal growth site for mindset transformation, emotional resilience, and coaching discovery.',
+    year: '2026',
+    href: 'https://great-minds-growth.netlify.app/',
+    image: '/images/converted/greatMinds.webp',
+    imageAlt: 'Great Minds Growth website homepage screenshot',
+    tags: ['Coaching', 'Growth', 'Netlify'],
   },
 ]
 
@@ -194,10 +173,10 @@ export const PROCESS_STEPS = [
 
 export const TESTIMONIAL = {
   quote:
-    '"They built our entire platform from scratch in under 3 weeks — clean code, beautiful UI, and they stayed reachable the whole way through. Best dev team we\'ve worked with."',
-  name: 'Yonas Alemu',
-  role: 'CEO, Habesha Tech',
-  initials: 'YA',
+    '"የኛstudio understood our mission at CORD Consultancy and turned it into a clear, polished website. The team was responsive, organized, and delivered a platform that helps us present our nutrition and health work with confidence."',
+  name: 'CORD Consultancy CEO',
+  role: 'Nutrition & Health Consultancy',
+  initials: 'CC',
 }
 
 // ─── Pricing ──────────────────────────────────────────────────────────────────
@@ -205,7 +184,7 @@ export const TESTIMONIAL = {
 export const PLANS = [
   {
     name: 'Starter',
-    price: 'ETB 15,000',
+    price: 'ETB 20,000',
     period: 'one-time',
     description: 'Perfect for small businesses that need a clean, professional online presence.',
     features: [
@@ -270,7 +249,7 @@ export const CONTACT_CHANNELS = [
 export const SERVICE_OPTIONS = [
   'Web App (React / Next.js)',
   'Mobile App (Flutter)',
-  'Graphic Design',
+  'Business Profile',
   'Social Media Management',
   'UI/UX Design',
   'Full Package',
@@ -282,7 +261,7 @@ export const FOOTER_LINKS = {
   Services: [
     { label: 'Web Development', href: '/services/web-development' },
     { label: 'Mobile Apps', href: '/services/mobile-apps' },
-    { label: 'Graphic Design', href: '/services/graphic-design' },
+    { label: 'Business Profile', href: '/services/business-profile' },
     { label: 'Social Media', href: '/services/social-media' },
   ],
   Company: [
@@ -295,8 +274,8 @@ export const FOOTER_LINKS = {
     { label: '+251 977 764 845', href: 'tel:+251977764845' },
     { label: '+251 901 889 188', href: 'tel:+251901889188' },
     { label: 'hello@yegnastudio.et', href: 'mailto:hello@yegnastudio.et' },
-    { label: '@yegnastudio on Telegram', href: 'tgram:@yegnastudio' },
-    { label: 'Addis Ababa, Ethiopia', href: '#' },
+    { label: '@yegnastudio on Telegram', href: 'https://t.me/yegnastudio' },
+    { label: 'Addis Ababa, Ethiopia', href: 'https://maps.google.com/?q=Addis%20Ababa%2C%20Ethiopia' },
   ],
 }
 
@@ -304,5 +283,5 @@ export const SOCIAL_LINKS = [
   { label: 'Facebook', href: '#', short: 'fb' },
   { label: 'LinkedIn', href: '#', short: 'in' },
   { label: 'Instagram', href: '#', short: 'ig' },
-  { label: 'Telegram', href: '#', short: 'tg' },
+  { label: 'Telegram', href: 'https://t.me/yegnastudio', short: 'tg' },
 ]

@@ -47,7 +47,7 @@ export const mobileAppsPricing: PricingPageData = {
       { category: 'Support', name: 'Post-launch support', starter: '14 days', growth: '30 days', enterprise: 'SLA available' },
     ],
   },
-  projects: mobileAppsService.projects.slice(0, 3),
+  projects: mobileAppsService.projects.slice(0, 4),
   faq: {
     eyebrow: 'Pricing FAQ',
     title: 'Mobile app pricing questions.',
