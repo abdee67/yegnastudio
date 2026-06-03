@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Noto_Sans_Ethiopic, Space_Grotesk } from "next/font/google";
+import { Analytics } from '@vercel/analytics/next';
 import { BRAND_DOMAIN, BRAND_NAME } from "@/data/brand";
 import "./globals.css";
 
@@ -85,6 +86,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   )
